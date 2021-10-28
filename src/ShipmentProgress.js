@@ -1,14 +1,6 @@
+import { getDate, getTime } from "./utils/dateHandler";
+
 function ShipmentProgress({ shipment }) {
-  const getDate = (fullDate) => {
-    const date = fullDate.split("T");
-    return date[0] || "Unknown";
-  };
-
-  const getLastUpdateDate = (fullDate) => {
-    const date = fullDate.split("T");
-    return `${date[0]} / ${date[1].slice(0, 5)}`;
-  };
-
   return (
     shipment && (
       <div className="ShipmentProgress card mt-5">
@@ -20,7 +12,11 @@ function ShipmentProgress({ shipment }) {
             </div>
             <div className="col-3">
               <h6>آخر تحديث</h6>
-              <p>{getLastUpdateDate(shipment.CurrentStatus.timestamp)}</p>
+              <p>
+                {getDate(shipment.CurrentStatus.timestamp) +
+                  " / " +
+                  getTime(shipment.CurrentStatus.timestamp)}
+              </p>
             </div>
             <div className="col-3">
               <h6>اسم التاجر</h6>
@@ -28,7 +24,7 @@ function ShipmentProgress({ shipment }) {
             </div>
             <div className="col-3">
               <h6>موعد التسليم خلال</h6>
-              <p>{getDate(shipment.PromisedDate)}</p>
+              <p>{getDate(shipment.PromisedDate) || "Unknown"}</p>
             </div>
           </div>
         </div>
