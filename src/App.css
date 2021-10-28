@@ -1,5 +1,10 @@
+.ShipmentProgress .card-body {
+  padding: 25px;
+}
+
 .ShipmentProgress .details p {
   font-weight: 700;
+  margin-bottom: 0;
 }
 .ShipmentProgress .details h6 {
   color: #a2a2a2;
