@@ -1,4 +1,5 @@
 import { getDate, getTime } from "./utils/dateHandler";
+import mapToArabic from "./utils/mapToArabic";
 
 function ShipmentProgress({ shipment }) {
   return (
@@ -8,7 +9,7 @@ function ShipmentProgress({ shipment }) {
           <div className="details row">
             <div className="col-6 col-md-3">
               <h6>رقم الشحنة {shipment.TrackingNumber}</h6>
-              <p>{shipment.CurrentStatus.state}</p>
+              <p>{mapToArabic(shipment.CurrentStatus.state)}</p>
             </div>
             <div className="col-6 col-md-3">
               <h6>آخر تحديث</h6>

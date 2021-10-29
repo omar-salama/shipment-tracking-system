@@ -1,4 +1,5 @@
 import { getDate, getTime } from "./utils/dateHandler";
+import mapToArabic from "./utils/mapToArabic";
 
 function TransitDetails({ transitEvents }) {
   return (
@@ -17,7 +18,7 @@ function TransitDetails({ transitEvents }) {
               <td>مدينة نصر</td>
               <td>{getDate(event.timestamp)}</td>
               <td>{getTime(event.timestamp)}</td>
-              <td>{event.state}</td>
+              <td>{mapToArabic(event.state)}</td>
             </tr>
           ))}
         </table>
