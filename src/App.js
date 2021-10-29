@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ShipmentProgress from "./ShipmentProgress";
 import TransitDetails from "./TransitDetails";
+import ShippingAddress from "./ShippingAddress";
+import Complaint from "./Complaint";
 
 function App() {
   const [shipmentDetails, setShipmentDetails] = useState("");
@@ -28,7 +30,8 @@ function App() {
             <TransitDetails transitEvents={transitEvents} />
           </div>
           <div className="col-3">
-            <h6>عنوان التسليم</h6>
+            <ShippingAddress />
+            <Complaint />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ h6 {
 
 td {
   font-weight: 600;
-  color: #485064;
+  color: #404559;
 }
 .TransitDetails table {
   width: 100%;
@@ -27,7 +27,7 @@ td {
 /* table's top border */
 .TransitDetails table tr th {
   color: #8f9bb2;
-  background: #f7f7f7;
+  background: #f9f9f9;
   border-top: 2px solid #f1f1f1;
 }
 /* table's and cells' bottom border */
@@ -48,14 +48,46 @@ td {
 }
 /* table's corners */
 .TransitDetails table tr:first-child th:first-child {
-  border-top-right-radius: 6px;
+  border-top-right-radius: 5px;
 }
 .TransitDetails table tr:first-child th:last-child {
-  border-top-left-radius: 6px;
+  border-top-left-radius: 5px;
 }
 .TransitDetails table tr:last-child td:first-child {
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 5px;
 }
 .TransitDetails table tr:last-child td:last-child {
-  border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 5px;
+}
+
+.ShippingAddress .address-details {
+  color: #404559;
+  background: #f9f9f9;
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 0.85rem;
+}
+.Complaint {
+  border: 2px solid #f1f1f1;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+.Complaint img {
+  width: 100%;
+  height: 100%;
+}
+.Complaint p {
+  margin-bottom: 10px;
+}
+.Complaint button {
+  background-color: #ff0000;
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 42px;
+  border-radius: 10px;
+  font-size: 0.7rem;
 }
