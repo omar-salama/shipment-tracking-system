@@ -17,12 +17,14 @@ td {
   font-weight: 600;
   color: #404559;
 }
+.TransitDetails {
+  overflow-x: auto;
+}
 .TransitDetails table {
   width: 100%;
   font-size: 0.85rem;
   border-collapse: separate;
   border-spacing: 0;
-  margin-left: 15px;
 }
 /* table's top border */
 .TransitDetails table tr th {
@@ -68,6 +70,9 @@ td {
   padding: 15px;
   font-size: 0.85rem;
 }
+.ShippingAddress .address-details p {
+  margin-bottom: 0;
+}
 .Complaint {
   border: 2px solid #f1f1f1;
   border-radius: 5px;
@@ -80,6 +85,12 @@ td {
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 767px) {
+  .Complaint img {
+    height: 60%;
+    width: 60%;
+  }
+}
 .Complaint p {
   margin-bottom: 10px;
 }
@@ -90,4 +101,9 @@ td {
   padding: 7px 42px;
   border-radius: 10px;
   font-size: 0.7rem;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .Complaint button {
+    padding: 7px 17px;
+  }
 }

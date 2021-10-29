@@ -26,10 +26,10 @@ function App() {
       <div className="container">
         <ShipmentProgress shipment={shipmentDetails} />
         <div className="row mt-4 mb-5">
-          <div className="col-9">
+          <div className="col-12 col-md-9">
             <TransitDetails transitEvents={transitEvents} />
           </div>
-          <div className="col-3">
+          <div className="col-12 col-md-3">
             <ShippingAddress />
             <Complaint />
           </div>

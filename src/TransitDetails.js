@@ -3,7 +3,7 @@ import { getDate, getTime } from "./utils/dateHandler";
 function TransitDetails({ transitEvents }) {
   return (
     transitEvents && (
-      <div className="TransitDetails ">
+      <div className="TransitDetails">
         <h6>تفاصيل الشحنة</h6>
         <table className="mt-3">
           <tr>
