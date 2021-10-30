@@ -1,10 +1,15 @@
-export default function getColorReflectingShipmentState(state) {
+function getColorByShipmentState(state) {
   switch (state) {
     case "DELIVERED":
-      return "green";
     case "DELIVERED_TO_SENDER":
-      return "red";
+      return "green";
     default:
       return "yellow";
   }
+}
+
+export default function setColorByShipmentState(state) {
+  return {
+    color: getColorByShipmentState(state),
+  };
 }
