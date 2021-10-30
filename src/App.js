@@ -16,7 +16,7 @@ function App() {
 
   const requestDetails = async () => {
     const shipment = await axios.get(
-      "https://tracking.bosta.co/shipments/track/1094442"
+      "https://tracking.bosta.co/shipments/track/9442984"
     );
     setShipmentDetails(shipment.data);
     setTransitEvents(shipment.data.TransitEvents);

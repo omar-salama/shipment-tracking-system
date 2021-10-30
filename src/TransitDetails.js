@@ -18,7 +18,10 @@ function TransitDetails({ transitEvents }) {
               <td>مدينة نصر</td>
               <td>{getDate(event.timestamp)}</td>
               <td>{getTime(event.timestamp)}</td>
-              <td>{mapToArabic(event.state)}</td>
+              <td>
+                {mapToArabic(event.state)}
+                {event.reason && <p>{event.reason}</p>}
+              </td>
             </tr>
           ))}
         </table>
