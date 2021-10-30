@@ -1,6 +1,7 @@
 import { getDate, getTime } from "./utils/dateHandler";
 import mapToArabic from "./utils/mapToArabic";
 import getColorReflectingShipmentState from "./utils/changeStyle";
+import Stepper from "./Stepper";
 
 function ShipmentProgress({ shipment }) {
   return (
@@ -37,6 +38,8 @@ function ShipmentProgress({ shipment }) {
               <p>{getDate(shipment.PromisedDate) || "Unknown"}</p>
             </div>
           </div>
+          <hr />
+          <Stepper />
         </div>
       </div>
     )
