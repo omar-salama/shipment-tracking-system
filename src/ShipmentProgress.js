@@ -39,7 +39,7 @@ function ShipmentProgress({ shipment }) {
             </div>
           </div>
           <hr />
-          <Stepper />
+          <Stepper currentShipmentState={shipment.CurrentStatus.state} />
         </div>
       </div>
     )
