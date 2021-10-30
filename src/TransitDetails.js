@@ -7,23 +7,27 @@ function TransitDetails({ transitEvents }) {
       <div className="TransitDetails">
         <h6>تفاصيل الشحنة</h6>
         <table className="mt-3">
-          <tr>
-            <th>الفرع</th>
-            <th>التاريخ</th>
-            <th>الوقت</th>
-            <th>تفاصيل</th>
-          </tr>
-          {transitEvents.map((event) => (
+          <thead>
             <tr>
-              <td>مدينة نصر</td>
-              <td>{getDate(event.timestamp)}</td>
-              <td>{getTime(event.timestamp)}</td>
-              <td>
-                {mapToArabic(event.state)}
-                {event.reason && <p>{event.reason}</p>}
-              </td>
+              <th>الفرع</th>
+              <th>التاريخ</th>
+              <th>الوقت</th>
+              <th>تفاصيل</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {transitEvents.map((event, index) => (
+              <tr key={index}>
+                <td>مدينة نصر</td>
+                <td>{getDate(event.timestamp)}</td>
+                <td>{getTime(event.timestamp)}</td>
+                <td>
+                  {mapToArabic(event.state)}
+                  {event.reason && <p>{event.reason}</p>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     )
