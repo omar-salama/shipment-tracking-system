@@ -1,4 +1,5 @@
 const getDate = (fullDate) => {
+  if (!fullDate) return null;
   const date = fullDate.split("T");
   return date[0];
 };
