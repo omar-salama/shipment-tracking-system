@@ -1,6 +1,7 @@
 import "./Stepper.css";
+import setColorByShipmentState from "./utils/changeStyle";
 
-function Stepper({ currentShipmentState }) {
+function Stepper({ currentShipmentState, TransitEvents }) {
   const steps = [
     "تم إنشاء الشحنة",
     "تم وصول الشحنة للمخازن",
@@ -14,8 +15,8 @@ function Stepper({ currentShipmentState }) {
       case "PACKAGE_RECEIVED":
         return 2;
       case "OUT_FOR_DELIVERY":
-      case "DELIVERED_TO_SENDER":
         return 3;
+      case "DELIVERED_TO_SENDER":
       case "DELIVERED":
         return 4;
       default:
@@ -28,12 +29,21 @@ function Stepper({ currentShipmentState }) {
       : "stepper-item";
   };
 
+  for (let TE of TransitEvents)
+    if (TE.reason && currentShipmentState === "WAITING_FOR_CUSTOMER_ACTION") {
+      var reason = TE.reason;
+    }
   return (
     <div className="Stepper">
       {steps.map((step, index) => (
         <div key={index} className={isComplete(index)}>
           <div className="step-counter">{index + 1}</div>
-          <div className="step-name">{step}</div>
+          <div className="step-name">
+            {step}
+            <p style={setColorByShipmentState(currentShipmentState)}>
+              {index === 2 && reason}
+            </p>
+          </div>
         </div>
       ))}
     </div>
