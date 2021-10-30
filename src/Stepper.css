@@ -4,7 +4,11 @@
   justify-content: space-between;
   margin: 30px 0 5px;
 }
+
 .stepper-item {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d1d1d1;
   text-align: center;
   position: relative;
   display: flex;
@@ -17,7 +21,6 @@
     font-size: 13px;
   }
 }
-
 .stepper-item::before {
   position: absolute;
   content: "";
@@ -26,6 +29,15 @@
   top: 17px;
   left: -50%;
   z-index: 2;
+}
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 7px solid #f6ad0a;
+  width: 100%;
+  top: 17px;
+  left: 50%;
+  z-index: 3;
 }
 
 .stepper-item .step-counter {
@@ -38,11 +50,9 @@
   height: 40px;
   border: 2px solid #d1d1d1;
   border-radius: 50%;
-  color: #d1d1d1;
   background: #fff;
   margin-bottom: 6px;
 }
-
 .stepper-item.completed .step-counter {
   background-color: #f6ad0a;
   border: none;
@@ -52,14 +62,10 @@
   top: 9px;
 }
 
-.stepper-item.completed::after {
-  position: absolute;
-  content: "";
-  border-bottom: 7px solid #f6ad0a;
-  width: 100%;
-  top: 17px;
-  left: 50%;
-  z-index: 3;
+.stepper-item.completed .step-name {
+  color: #323232;
+  position: relative;
+  top: 18px;
 }
 
 .stepper-item:first-child::after {
@@ -67,11 +73,6 @@
 }
 .stepper-item:last-child::before {
   content: none;
-}
-
-.stepper-item.completed .step-name {
-  position: relative;
-  top: 18px;
 }
 
 /* green rgb that will be used later #1ac45e */
