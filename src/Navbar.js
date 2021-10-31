@@ -3,10 +3,10 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ parentCallBack }) {
+function Navbar({ AppCallBack }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    parentCallBack(e.target.track_num.value);
+    AppCallBack(e.target.track_num.value);
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
