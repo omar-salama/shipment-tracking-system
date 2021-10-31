@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import ShipmentProgress from "./ShipmentProgress";
 import TransitDetails from "./TransitDetails";
@@ -11,20 +11,20 @@ function App() {
   const [shipmentDetails, setShipmentDetails] = useState("");
   const [transitEvents, setTransitEvents] = useState("");
 
-  useEffect(() => {
-    requestDetails();
-  }, []);
-
-  const requestDetails = async () => {
+  const requestDetails = async (shipmentNumber) => {
     const shipment = await axios.get(
-      "https://tracking.bosta.co/shipments/track/9442984"
+      `https://tracking.bosta.co/shipments/track/${shipmentNumber}`
     );
     setShipmentDetails(shipment.data);
     setTransitEvents(shipment.data.TransitEvents);
   };
+
+  const handleCallBack = (shipmentNumber) => {
+    requestDetails(shipmentNumber);
+  };
   return (
     <div className="App">
-      <Navbar />
+      <Navbar parentCallBack={handleCallBack} />
       <div className="container">
         <ShipmentProgress shipment={shipmentDetails} />
         <div className="row mt-4 mb-5">

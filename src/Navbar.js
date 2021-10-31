@@ -3,7 +3,11 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar() {
+function Navbar({ parentCallBack }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    parentCallBack(e.target.track_num.value);
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -47,7 +51,7 @@ function Navbar() {
               >
                 <h5>تتبع شحنتك</h5>
                 <p className="mb-3">اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-                <form className="dropdown-item">
+                <form className="dropdown-item" onSubmit={handleSubmit}>
                   <input
                     type="text"
                     placeholder="رقم الشحنة"
