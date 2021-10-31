@@ -74,5 +74,3 @@
 .stepper-item:last-child::before {
   content: none;
 }
-
-/* green rgb that will be used later #1ac45e */

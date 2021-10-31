@@ -2,9 +2,9 @@ function getColorByShipmentState(state) {
   switch (state) {
     case "DELIVERED":
     case "DELIVERED_TO_SENDER":
-      return "green";
+      return "#1ac45e"; // Green
     default:
-      return "yellow";
+      return "#f6ad0a"; // Yellow
   }
 }
 
