@@ -33,7 +33,10 @@ function ShipmentProgress({ shipment }) {
             </div>
           </div>
           <hr />
-          <Stepper currentShipmentState={shipment.CurrentStatus.state} />
+          <Stepper
+            currentShipmentState={shipment.CurrentStatus.state}
+            TransitEvents={shipment.TransitEvents}
+          />
         </div>
       </div>
     )
