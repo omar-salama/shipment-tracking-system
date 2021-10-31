@@ -5,6 +5,7 @@ import ShipmentProgress from "./ShipmentProgress";
 import TransitDetails from "./TransitDetails";
 import ShippingAddress from "./ShippingAddress";
 import Complaint from "./Complaint";
+import Navbar from "./Navbar";
 
 function App() {
   const [shipmentDetails, setShipmentDetails] = useState("");
@@ -23,6 +24,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Navbar />
       <div className="container">
         <ShipmentProgress shipment={shipmentDetails} />
         <div className="row mt-4 mb-5">

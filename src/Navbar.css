@@ -1,0 +1,51 @@
+.navbar {
+  padding: 15px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+.navbar .navbar-brand img {
+  max-width: 70%;
+}
+.navbar .navbar-nav {
+  margin-right: 25px;
+}
+.navbar .navbar-nav .nav-link {
+  padding: 0 25px;
+  color: #323232;
+  font-weight: 700;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #fb0006;
+  cursor: pointer;
+}
+.navbar .dropdown-menu h5 {
+  color: #f00;
+  font-weight: 600;
+}
+.navbar .dropdown-menu {
+  background-color: #fafafa;
+  padding: 20px 25px;
+  color: #5e5e5e;
+  text-align: right;
+}
+.navbar .dropdown-item {
+  padding-right: 0;
+}
+.navbar .dropdown-item:hover {
+  background-color: #fafafa;
+}
+.navbar .dropdown-item input {
+  background-color: #fff;
+  border: 1px solid #e3e7ec;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.navbar .dropdown-menu button {
+  background-color: #fb0006;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
+}
