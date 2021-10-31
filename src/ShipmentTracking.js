@@ -1,5 +1,5 @@
 import ShipmentProgress from "./ShipmentProgress";
-import TransitDetails from "./TransitDetails";
+import ShipmentTransitDetails from "./ShipmentTransitDetails";
 import ShippingAddress from "./ShippingAddress";
 import Complaint from "./Complaint";
 import ShipmentInqueryForm from "./ShipmentInqueryForm";
@@ -16,7 +16,9 @@ function ShipmentTracking({ shipmentDetails, AppCallBack }) {
       <ShipmentProgress shipment={shipmentDetails} />
       <div className="row mt-4 mb-5">
         <div className="col-12 col-md-9">
-          <TransitDetails transitEvents={shipmentDetails.TransitEvents} />
+          <ShipmentTransitDetails
+            transitEvents={shipmentDetails.TransitEvents}
+          />
         </div>
         <div className="col-12 col-md-3">
           <ShippingAddress />

@@ -1,10 +1,11 @@
+import "./ShipmentTransitDetails.css";
 import { getDate, getTime } from "./utils/dateHandler";
 import mapToArabic from "./utils/mapToArabic";
 
-function TransitDetails({ transitEvents }) {
+function ShipmentTransitDetails({ transitEvents }) {
   return (
     transitEvents && (
-      <div className="TransitDetails">
+      <div className="ShipmentTransitDetails">
         <h6>تفاصيل الشحنة</h6>
         <table className="mt-3">
           <thead>
@@ -34,4 +35,4 @@ function TransitDetails({ transitEvents }) {
   );
 }
 
-export default TransitDetails;
+export default ShipmentTransitDetails;

@@ -1,0 +1,18 @@
+.ShipmentProgress .card-body {
+  padding: 25px;
+}
+
+.ShipmentProgress .details p {
+  font-weight: 700;
+}
+.ShipmentProgress .details h6 {
+  color: #999999;
+}
+
+.ShipmentProgress hr {
+  margin: 20px -20px 0;
+}
+.ShipmentProgress .progress-step {
+  border: 1px solid black;
+  border-radius: 50%;
+}

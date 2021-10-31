@@ -1,3 +1,4 @@
+import "./ShipmentProgress.css";
 import { getDate, getTime } from "./utils/dateHandler";
 import mapToArabic from "./utils/mapToArabic";
 import setColorByShipmentState from "./utils/changeStyle";
