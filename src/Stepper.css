@@ -21,6 +21,8 @@
     font-size: 13px;
   }
 }
+
+/* uncompleted step bar styles */
 .stepper-item::before {
   position: absolute;
   content: attr(data-before);
@@ -30,6 +32,11 @@
   left: -50%;
   z-index: 2;
 }
+.stepper-item:last-child::before {
+  content: none;
+}
+
+/* completed step bar styles */
 .stepper-item.completed:not(:first-child) .progress-bar {
   position: absolute;
   content: attr(data-after);
@@ -40,6 +47,21 @@
   z-index: 3;
 }
 
+/* delivered/cancelled step bar styles */
+.stepper-item.completed:not(:first-child) .progress-bar.delivered {
+  border-color: #1ac45e;
+}
+.stepper-item.completed .step-counter.delivered {
+  background-color: #1ac45e;
+}
+.stepper-item.completed:not(:first-child) .progress-bar.cancelled {
+  border-color: #f00;
+}
+.stepper-item.completed .step-counter.cancelled {
+  background-color: #f00;
+}
+
+/* step checkpoint styles */
 .stepper-item .step-counter {
   position: relative;
   z-index: 5;
@@ -62,19 +84,9 @@
   top: 9px;
 }
 
+/* step name styles */
 .stepper-item.completed .step-name {
   color: #323232;
   position: relative;
   top: 18px;
-}
-
-.stepper-item:last-child::before {
-  content: none;
-}
-
-.stepper-item.completed:not(:first-child) .progress-bar.delivered {
-  border-color: #1ac45e;
-}
-.stepper-item.completed .step-counter.delivered {
-  background-color: #1ac45e;
 }

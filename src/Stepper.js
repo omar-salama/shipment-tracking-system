@@ -15,6 +15,7 @@ function Stepper({ currentShipmentState, TransitEvents }) {
       case "PACKAGE_RECEIVED":
         return 2;
       case "OUT_FOR_DELIVERY":
+      case "WAITING_FOR_CUSTOMER_ACTION":
         return 3;
       case "DELIVERED_TO_SENDER":
       case "DELIVERED":
@@ -37,7 +38,7 @@ function Stepper({ currentShipmentState, TransitEvents }) {
 
   for (let TE of TransitEvents)
     if (TE.reason && currentShipmentState === "WAITING_FOR_CUSTOMER_ACTION") {
-      var reason = TE.reason;
+      var delayReason = TE.reason;
     }
 
   return (
@@ -50,9 +51,14 @@ function Stepper({ currentShipmentState, TransitEvents }) {
           </div>
           <div className="step-name">
             {step}
-            <p style={setColorByShipmentState(currentShipmentState)}>
-              {index === 2 && reason}
-            </p>
+            {delayReason && index === 2 && (
+              <p
+                className="step-reason"
+                style={setColorByShipmentState(currentShipmentState)}
+              >
+                {delayReason}
+              </p>
+            )}
           </div>
         </div>
       ))}
