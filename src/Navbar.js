@@ -34,7 +34,7 @@ function Navbar({ AppCallBack }) {
             <a className="nav-link">الأسعار</a>
             <a className="nav-link">كلم المبيعات</a>
           </div>
-          <div className="navbar-nav me-auto">
+          <div className="navbar-nav me-auto left-nav">
             <div className="nav-item dropdown">
               <a
                 className="nav-link"

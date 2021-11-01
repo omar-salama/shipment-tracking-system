@@ -36,3 +36,22 @@
   width: 32px;
   margin-right: 15px;
 }
+
+@media screen and (max-width: 768px) {
+  .ShipmentInqueryForm {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ShipmentInqueryForm {
+    width: 300px;
+    padding: 30px;
+  }
+  .ShipmentInqueryForm form input {
+    width: 75%;
+  }
+  .ShipmentInqueryForm p {
+    margin-bottom: 15px;
+  }
+}

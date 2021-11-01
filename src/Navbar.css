@@ -26,6 +26,8 @@
   padding: 20px 25px;
   color: #5e5e5e;
   text-align: right;
+  margin-top: 25px !important;
+  margin-right: -25px !important;
 }
 .navbar .dropdown-item {
   padding-right: 0;
@@ -48,4 +50,13 @@
   height: 32px;
   width: 32px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .left-nav {
+    margin-right: 25px !important;
+  }
+  .navbar-nav .nav-link {
+    margin-top: 10px;
+  }
 }
