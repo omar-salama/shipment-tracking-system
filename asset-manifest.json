@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/shipment-tracking-system/static/css/main.33d2a207.chunk.css",
+    "main.js": "/shipment-tracking-system/static/js/main.f803a85e.chunk.js",
+    "main.js.map": "/shipment-tracking-system/static/js/main.f803a85e.chunk.js.map",
+    "runtime-main.js": "/shipment-tracking-system/static/js/runtime-main.b11e867c.js",
+    "runtime-main.js.map": "/shipment-tracking-system/static/js/runtime-main.b11e867c.js.map",
+    "static/css/2.8c0e6b67.chunk.css": "/shipment-tracking-system/static/css/2.8c0e6b67.chunk.css",
+    "static/js/2.15aca7a3.chunk.js": "/shipment-tracking-system/static/js/2.15aca7a3.chunk.js",
+    "static/js/2.15aca7a3.chunk.js.map": "/shipment-tracking-system/static/js/2.15aca7a3.chunk.js.map",
+    "index.html": "/shipment-tracking-system/index.html",
+    "static/css/2.8c0e6b67.chunk.css.map": "/shipment-tracking-system/static/css/2.8c0e6b67.chunk.css.map",
+    "static/css/main.33d2a207.chunk.css.map": "/shipment-tracking-system/static/css/main.33d2a207.chunk.css.map",
+    "static/js/2.15aca7a3.chunk.js.LICENSE.txt": "/shipment-tracking-system/static/js/2.15aca7a3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b11e867c.js",
+    "static/css/2.8c0e6b67.chunk.css",
+    "static/js/2.15aca7a3.chunk.js",
+    "static/css/main.33d2a207.chunk.css",
+    "static/js/main.f803a85e.chunk.js"
+  ]
+}
