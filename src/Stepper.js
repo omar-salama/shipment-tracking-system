@@ -25,8 +25,14 @@ function Stepper({ currentShipmentState, TransitEvents }) {
   };
   const isComplete = (stepNumber) => {
     return currentStepNumber(currentShipmentState) > stepNumber
-      ? " stepper-item completed"
-      : "stepper-item";
+      ? "completed"
+      : "";
+  };
+
+  const changeStepperColor = () => {
+    if (currentStepNumber(currentShipmentState) === 4) return "delivered";
+    // TODO: set color to red if the shipment was cancelled (not provided in the assestment's test cases)
+    return "";
   };
 
   for (let TE of TransitEvents)
@@ -37,8 +43,11 @@ function Stepper({ currentShipmentState, TransitEvents }) {
   return (
     <div className="Stepper">
       {steps.map((step, index) => (
-        <div key={index} className={isComplete(index)}>
-          <div className="step-counter">{index + 1}</div>
+        <div key={index} className={"stepper-item " + isComplete(index)}>
+          <div className={"progress-bar " + changeStepperColor()}></div>
+          <div className={"step-counter " + changeStepperColor()}>
+            {index + 1}
+          </div>
           <div className="step-name">
             {step}
             <p style={setColorByShipmentState(currentShipmentState)}>
