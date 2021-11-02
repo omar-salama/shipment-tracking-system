@@ -35,6 +35,7 @@
   height: 32px;
   width: 32px;
   margin-right: 15px;
+  padding: 0;
 }
 
 @media screen and (max-width: 768px) {
