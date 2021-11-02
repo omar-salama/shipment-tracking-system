@@ -23,6 +23,13 @@ table td {
   border-bottom: 2px solid #f1f1f1;
   padding: 15px;
 }
+@media screen and (max-width: 480px) {
+  table th,
+  table td {
+    padding: 13px 5px;
+    text-align: center;
+  }
+}
 /* table's right border */
 table th:first-child,
 table td:first-child {
