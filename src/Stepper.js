@@ -8,7 +8,6 @@ import { faSave } from "@fortawesome/free-solid-svg-icons";
 import setColorByShipmentState from "./utils/changeStyle";
 
 function Stepper({ currentShipmentState, TransitEvents }) {
-  currentShipmentState = "DELIVERED";
   const steps = [
     "تم إنشاء الشحنة",
     "تم وصول الشحنة للمخازن",
