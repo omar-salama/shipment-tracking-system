@@ -1,10 +1,13 @@
 import "./ShipmentProgress.css";
-import { getDate, getTime } from "./utils/dateHandler";
+import { useContext } from "react";
+import { ShipmentContext } from "./ShipmentTracking";
 import translateAR from "./translation.json";
+import { getDate, getTime } from "./utils/dateHandler";
 import setColorByShipmentState from "./utils/changeStyle";
 import Stepper from "./Stepper";
 
-function ShipmentProgress({ shipment }) {
+function ShipmentProgress() {
+  const shipment = useContext(ShipmentContext);
   return (
     shipment && (
       <div className="ShipmentProgress card mt-5">

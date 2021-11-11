@@ -1,10 +1,13 @@
 import "./ShipmentTransitDetails.css";
+import { useContext } from "react";
+import { ShipmentContext } from "./ShipmentTracking";
 import translateAR from "./translation.json";
 import { getDate, getTime } from "./utils/dateHandler";
 
-function ShipmentTransitDetails({ transitEvents }) {
+function ShipmentTransitDetails() {
+  const { TransitEvents } = useContext(ShipmentContext);
   return (
-    transitEvents && (
+    TransitEvents && (
       <div className="ShipmentTransitDetails">
         <h6>تفاصيل الشحنة</h6>
         <table className="mt-3">
@@ -17,7 +20,7 @@ function ShipmentTransitDetails({ transitEvents }) {
             </tr>
           </thead>
           <tbody>
-            {transitEvents.map((event, index) => (
+            {TransitEvents.map((event, index) => (
               <tr key={index}>
                 <td>مدينة نصر</td>
                 <td>{getDate(event.timestamp)}</td>
