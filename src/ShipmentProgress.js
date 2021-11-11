@@ -1,6 +1,6 @@
 import "./ShipmentProgress.css";
 import { getDate, getTime } from "./utils/dateHandler";
-import mapToArabic from "./utils/mapToArabic";
+import translateAR from "./translation.json";
 import setColorByShipmentState from "./utils/changeStyle";
 import Stepper from "./Stepper";
 
@@ -13,7 +13,7 @@ function ShipmentProgress({ shipment }) {
             <div className="col-6 col-md-3">
               <h6>رقم الشحنة {shipment.TrackingNumber}</h6>
               <p style={setColorByShipmentState(shipment.CurrentStatus.state)}>
-                {mapToArabic(shipment.CurrentStatus.state)}
+                {translateAR[shipment.CurrentStatus.state]}
               </p>
             </div>
             <div className="col-6 col-md-3">

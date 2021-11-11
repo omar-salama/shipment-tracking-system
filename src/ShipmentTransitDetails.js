@@ -1,6 +1,6 @@
 import "./ShipmentTransitDetails.css";
+import translateAR from "./translation.json";
 import { getDate, getTime } from "./utils/dateHandler";
-import mapToArabic from "./utils/mapToArabic";
 
 function ShipmentTransitDetails({ transitEvents }) {
   return (
@@ -23,7 +23,7 @@ function ShipmentTransitDetails({ transitEvents }) {
                 <td>{getDate(event.timestamp)}</td>
                 <td>{getTime(event.timestamp)}</td>
                 <td>
-                  {mapToArabic(event.state)}
+                  {translateAR[event.state] || event.state}
                   {event.reason && <p>{event.reason}</p>}
                 </td>
               </tr>
