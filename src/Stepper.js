@@ -31,7 +31,9 @@ function Stepper({ currentShipmentState, TransitEvents }) {
       case "PACKAGE_RECEIVED":
         return 2;
       case "OUT_FOR_DELIVERY":
+      case "DELIVERY_FAILED":
       case "WAITING_FOR_CUSTOMER_ACTION":
+      case "CANCELLED":
         return 3;
       case "DELIVERED_TO_SENDER":
       case "DELIVERED":
@@ -52,27 +54,38 @@ function Stepper({ currentShipmentState, TransitEvents }) {
     }
     return "";
   };
+
+  const notDelivered = () => {
+    return currentStepNumber(currentShipmentState) !== 4;
+  };
+
   function renderIcons(index, step) {
     if (!isComplete(index)) return step.icon;
     // render last shipment state icon instead of the checkmark ( √ ) icon
-    if (
-      isComplete(index) === "completed current-state" &&
-      currentStepNumber(currentShipmentState) !== 4
-    )
+    if (isComplete(index).includes("current-state") && notDelivered())
       return step.icon;
     return <FontAwesomeIcon icon={faCheck} />;
   }
 
   const changeStepperColor = () => {
-    if (currentStepNumber(currentShipmentState) === 4) return "delivered";
-    // TODO: set color to red if the shipment was cancelled (not provided in the assestment's test cases)
-    return "";
+    switch (currentShipmentState) {
+      case "DELIVERED":
+        return "delivered";
+      case "CANCELLED":
+      case "DELIVERY_FAILED":
+      case "DELIVERED_TO_SENDER":
+        return "cancelled";
+      default:
+        return "";
+    }
   };
 
-  for (let TE of TransitEvents)
-    if (TE.reason && currentShipmentState === "WAITING_FOR_CUSTOMER_ACTION") {
-      var delayReason = TE.reason;
-    }
+  // get shipment delay/cancellation reason
+  if (notDelivered())
+    for (let TE of TransitEvents)
+      if (TE.reason) {
+        var reason = TE.reason;
+      }
 
   return (
     <div className="Stepper">
@@ -84,12 +97,12 @@ function Stepper({ currentShipmentState, TransitEvents }) {
           </div>
           <div className="step-name">
             {step.label}
-            {delayReason && index === 2 && (
+            {reason && index === 2 && (
               <p
                 className="step-reason"
                 style={setColorByShipmentState(currentShipmentState)}
               >
-                {delayReason}
+                {reason}
               </p>
             )}
           </div>
