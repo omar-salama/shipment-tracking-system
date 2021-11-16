@@ -2,7 +2,6 @@ import "./ShipmentProgress.css";
 import { useContext } from "react";
 import { ShipmentContext } from "./ShipmentTracking";
 import translateAR from "./translation.json";
-import { getDate, getTime } from "./utils/dateHandler";
 import setColorByShipmentState from "./utils/changeStyle";
 import Stepper from "./Stepper";
 
@@ -22,9 +21,17 @@ function ShipmentProgress() {
             <div className="col-6 col-md-3">
               <h6>آخر تحديث</h6>
               <p>
-                {getDate(shipment.CurrentStatus.timestamp) +
-                  " / " +
-                  getTime(shipment.CurrentStatus.timestamp)}
+                {new Date(shipment.CurrentStatus.timestamp).toLocaleString(
+                  "ar-EG",
+                  {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "numeric",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "numeric",
+                  }
+                )}
               </p>
             </div>
             <div className="col-6 col-md-3 mt-3 mt-md-0">
@@ -33,7 +40,11 @@ function ShipmentProgress() {
             </div>
             <div className="col-6 col-md-3 mt-3 mt-md-0">
               <h6>موعد التسليم خلال</h6>
-              <p>{getDate(shipment.PromisedDate) || "Unknown"}</p>
+              <p>
+                {new Date(shipment.PromisedDate).toLocaleDateString("ar-EG", {
+                  dateStyle: "full",
+                }) || "Unknown"}
+              </p>
             </div>
           </div>
           <hr />

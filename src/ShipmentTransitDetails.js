@@ -2,7 +2,6 @@ import "./ShipmentTransitDetails.css";
 import { useContext } from "react";
 import { ShipmentContext } from "./ShipmentTracking";
 import translateAR from "./translation.json";
-import { getDate, getTime } from "./utils/dateHandler";
 
 function ShipmentTransitDetails() {
   const { TransitEvents } = useContext(ShipmentContext);
@@ -20,11 +19,15 @@ function ShipmentTransitDetails() {
             </tr>
           </thead>
           <tbody>
-            {TransitEvents.map((event, index) => (
-              <tr key={index}>
+            {TransitEvents.map((event) => (
+              <tr key={event.timestamp}>
                 <td>مدينة نصر</td>
-                <td>{getDate(event.timestamp)}</td>
-                <td>{getTime(event.timestamp)}</td>
+                <td>{new Date(event.timestamp).toLocaleDateString("en-GB")}</td>
+                <td id="date-fix">
+                  {new Date(event.timestamp).toLocaleTimeString("en-US", {
+                    timeStyle: "short",
+                  })}
+                </td>
                 <td>
                   {translateAR[event.state] || event.state}
                   {event.reason && <p>{event.reason}</p>}
