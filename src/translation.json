@@ -7,5 +7,11 @@
   "WAITING_FOR_CUSTOMER_ACTION": "لم يتم تسليم الشحنة",
   "DELIVERED_TO_SENDER": "تم إسترجاع الشحنة",
   "RECEIVED_DELIVERY_LOCATION": "تم إستلام مكان التسليم",
-  "DELIVERED": "تم التسليم"
+  "DELIVERED": "تم التسليم",
+  "Alexandria Hub": "الأسكندرية",
+  "Katamya Hub": "القطامية",
+  "Bosta HQ": "مقر بوسطة الرئيسي",
+  "Cairo Sorting Facility": "محطة فرز القاهرة",
+  "Mohandseen Hub": "المهندسين",
+  "Tanta Hub": "طنطا"
 }

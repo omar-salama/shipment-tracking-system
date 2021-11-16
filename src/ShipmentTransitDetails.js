@@ -21,7 +21,7 @@ function ShipmentTransitDetails() {
           <tbody>
             {TransitEvents.map((event) => (
               <tr key={event.timestamp}>
-                <td>مدينة نصر</td>
+                <td>{translateAR[event.hub] || "—"}</td>
                 <td>{new Date(event.timestamp).toLocaleDateString("en-GB")}</td>
                 <td id="date-fix">
                   {new Date(event.timestamp).toLocaleTimeString("en-US", {
