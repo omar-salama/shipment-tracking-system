@@ -1,0 +1,11 @@
+{
+  "TICKET_CREATED": "تم إنشاء الشحنة",
+  "PACKAGE_RECEIVED": "تم وصول الشحنة للمخازن",
+  "IN_TRANSIT": "الشحنة خرجت من المخازن",
+  "NOT_YET_SHIPPED": "لم يتم الشحن",
+  "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+  "WAITING_FOR_CUSTOMER_ACTION": "لم يتم تسليم الشحنة",
+  "DELIVERED_TO_SENDER": "تم إسترجاع الشحنة",
+  "RECEIVED_DELIVERY_LOCATION": "تم إستلام مكان التسليم",
+  "DELIVERED": "تم التسليم"
+}

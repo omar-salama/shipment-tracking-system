@@ -8,19 +8,22 @@ import { faSave } from "@fortawesome/free-solid-svg-icons";
 import setColorByShipmentState from "./utils/changeStyle";
 
 function Stepper({ currentShipmentState, TransitEvents }) {
-  const steps = [
-    "تم إنشاء الشحنة",
-    "تم وصول الشحنة للمخازن",
-    "الشحنة خرجت للتسليم",
-    "تم التسليم",
-  ];
-  const icons = [
-    <FontAwesomeIcon icon={faTicketAlt} />,
-    <FontAwesomeIcon icon={faBoxOpen} />,
-    <FontAwesomeIcon icon={faTruck} flip="horizontal" />,
-    <FontAwesomeIcon icon={faSave} />,
-    <FontAwesomeIcon icon={faCheck} />,
-  ];
+  const steps = {
+    step1: {
+      label: "تم إنشاء الشحنة",
+      icon: <FontAwesomeIcon icon={faTicketAlt} />,
+    },
+    step2: {
+      label: "تم وصول الشحنة للمخازن",
+      icon: <FontAwesomeIcon icon={faBoxOpen} />,
+    },
+    step3: {
+      label: "الشحنة خرجت للتسليم",
+      icon: <FontAwesomeIcon icon={faTruck} flip="horizontal" />,
+    },
+    step4: { label: "تم التسليم", icon: <FontAwesomeIcon icon={faSave} /> },
+  };
+
   const currentStepNumber = (state) => {
     switch (state) {
       case "TICKET_CREATED":
@@ -49,15 +52,15 @@ function Stepper({ currentShipmentState, TransitEvents }) {
     }
     return "";
   };
-  function renderIcons(index, icon) {
-    if (!isComplete(index)) return icon[index];
+  function renderIcons(index, step) {
+    if (!isComplete(index)) return step.icon;
     // render last shipment state icon instead of the checkmark ( √ ) icon
     if (
       isComplete(index) === "completed current-state" &&
       currentStepNumber(currentShipmentState) !== 4
     )
-      return icon[index];
-    return icon[4];
+      return step.icon;
+    return <FontAwesomeIcon icon={faCheck} />;
   }
 
   const changeStepperColor = () => {
@@ -73,14 +76,14 @@ function Stepper({ currentShipmentState, TransitEvents }) {
 
   return (
     <div className="Stepper">
-      {steps.map((step, index) => (
+      {Object.values(steps).map((step, index) => (
         <div key={index} className={"stepper-item " + isComplete(index)}>
           <div className={"progress-bar " + changeStepperColor()}></div>
           <div className={"step-counter " + changeStepperColor()}>
-            {renderIcons(index, icons)}
+            {renderIcons(index, step)}
           </div>
           <div className="step-name">
-            {step}
+            {step.label}
             {delayReason && index === 2 && (
               <p
                 className="step-reason"

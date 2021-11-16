@@ -3,10 +3,10 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ AppCallBack }) {
+function Navbar({ onShipmentChange }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    AppCallBack(e.target.track_num.value);
+    onShipmentChange(e.target.track_num.value);
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">

@@ -1,10 +1,10 @@
 import "./ShipmentInqueryForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-function ShipmentInqueryForm({ parentCallBack }) {
+function ShipmentInqueryForm({ onShipmentChange }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    parentCallBack(e.target.track_num.value);
+    onShipmentChange(e.target.track_num.value);
   };
   return (
     <div className="ShipmentInqueryForm">
