@@ -1,13 +1,16 @@
 import "./ShipmentInqueryForm.css";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-function ShipmentInqueryForm({ onShipmentChange }) {
+function ShipmentInqueryForm() {
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    onShipmentChange(e.target.track_num.value);
+    navigate(`/track-shipment/${e.target.track_num.value}`);
   };
+
   return (
-    <div className="ShipmentInqueryForm">
+    <div className="ShipmentInqueryForm center">
       <h4>تتبع شحنتك</h4>
       <p>اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
       <form onSubmit={handleSubmit}>

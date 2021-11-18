@@ -1,20 +1,23 @@
 import "./App.css";
-import { useState } from "react";
-import Navbar from "./Navbar";
-import ShipmentTracking from "./ShipmentTracking";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ShipmentInqueryForm from "./pages/ShipmentInqueryForm";
+import ShipmentTracking from "./pages/ShipmentTracking";
+import Layout from "./layout/Layout";
 
 function App() {
-  const [shipmentNumber, setShipmentNumber] = useState("");
-  const handleShipmentChange = (shipmentNumber) => {
-    setShipmentNumber(shipmentNumber);
-  };
   return (
     <div className="App">
-      <Navbar onShipmentChange={handleShipmentChange} />
-      <ShipmentTracking
-        onShipmentChange={handleShipmentChange}
-        shipmentNumber={shipmentNumber}
-      />
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/track-shipment" element={<ShipmentInqueryForm />} />
+            <Route
+              path="/track-shipment/:shipmentNumber"
+              element={<ShipmentTracking />}
+            />
+          </Routes>
+        </Layout>
+      </Router>
     </div>
   );
 }

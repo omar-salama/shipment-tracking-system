@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./Navbar.css";
+import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ onShipmentChange }) {
+function Navbar() {
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    onShipmentChange(e.target.track_num.value);
+    navigate(`/track-shipment/${e.target.track_num.value}`);
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
