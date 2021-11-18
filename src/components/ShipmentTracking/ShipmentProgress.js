@@ -1,8 +1,8 @@
 import "./ShipmentProgress.css";
 import { useContext } from "react";
-import { ShipmentContext } from "./ShipmentTracking";
-import translateAR from "./translation.json";
-import setColorByShipmentState from "./utils/changeStyle";
+import { ShipmentContext } from "../../pages/ShipmentTracking";
+import translateAR from "../../translation.json";
+import setColorByShipmentState from "../../utils/changeStyle";
 import Stepper from "./Stepper";
 
 function ShipmentProgress() {

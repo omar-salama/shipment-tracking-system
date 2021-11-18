@@ -2,7 +2,7 @@ import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 import ShipmentProgress from "./ShipmentProgress";
 import ShipmentTransitDetails from "./ShipmentTransitDetails";
-import ShippingAddress from "./ShippingAddress";
+import ShippingAddress from "./components/ShipmentTracking/ShippingAddress";
 import Complaint from "./Complaint";
 import ShipmentInqueryForm from "./ShipmentInqueryForm";
 export const ShipmentContext = createContext();
