@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="bosta.co">
+        <a className="navbar-brand" href="https://bosta.co/">
           <img
             src="https://bosta.co/wp-content/uploads/2019/08/Component.svg"
             alt="Bosta Logo"
