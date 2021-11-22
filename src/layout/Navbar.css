@@ -3,7 +3,9 @@
   border-bottom: 1px solid #dee2e6;
 }
 .navbar .navbar-brand img {
-  max-width: 70%;
+  width: 115px;
+  height: 35px;
+  margin-left: 40px;
 }
 .navbar .navbar-nav {
   margin-right: 25px;
@@ -20,6 +22,9 @@
 .navbar .dropdown-menu {
   border: none;
   background-color: inherit;
+}
+.navbar .dropdown-menu .ShipmentInqueryForm {
+  background-color: #fafafa;
 }
 
 @media screen and (max-width: 768px) {
