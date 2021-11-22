@@ -10,7 +10,7 @@ function ShipmentInqueryForm() {
   };
 
   return (
-    <div className="ShipmentInqueryForm center">
+    <div className="ShipmentInqueryForm">
       <h4>تتبع شحنتك</h4>
       <p>اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
       <form onSubmit={handleSubmit}>

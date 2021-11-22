@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ShipmentInqueryForm from "./pages/ShipmentInqueryForm";
 import ShipmentTracking from "./pages/ShipmentTracking";
+import ShipmentInquery from "./pages/ShipmentInquery";
 import Layout from "./layout/Layout";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/track-shipment" element={<ShipmentInqueryForm />} />
+            <Route path="/track-shipment" element={<ShipmentInquery />} />
             <Route
               path="/track-shipment/:shipmentNumber"
               element={<ShipmentTracking />}
