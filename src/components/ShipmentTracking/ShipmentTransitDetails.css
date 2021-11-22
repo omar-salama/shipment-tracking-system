@@ -53,3 +53,8 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-bottom-left-radius: 5px;
 }
+
+#date-fix {
+  text-align: right;
+  direction: ltr;
+}

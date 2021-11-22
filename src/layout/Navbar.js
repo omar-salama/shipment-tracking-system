@@ -1,17 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ShipmentInqueryForm from "../components/shared/ShipmentInqueryForm";
 
-function Navbar({ onShipmentChange }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onShipmentChange(e.target.track_num.value);
-  };
+function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="bosta.co">
+        <a className="navbar-brand" href="https://bosta.co/">
           <img
             src="https://bosta.co/wp-content/uploads/2019/08/Component.svg"
             alt="Bosta Logo"
@@ -46,21 +41,10 @@ function Navbar({ onShipmentChange }) {
                 تتبع شحنتك
               </a>
               <div
-                className="dropdown-menu mt-3"
+                className="dropdown-menu mt-4"
                 aria-labelledby="navbarDropdown"
               >
-                <h5>تتبع شحنتك</h5>
-                <p className="mb-3">اكتب رقم الشحنة وتابع شحنتك خطوة بخطوة</p>
-                <form className="dropdown-item" onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    placeholder="رقم الشحنة"
-                    name="track_num"
-                  />
-                  <button type="submit">
-                    <FontAwesomeIcon icon={faSearch} />
-                  </button>
-                </form>
+                <ShipmentInqueryForm />
               </div>
             </div>
             <a className="nav-link">تسجيل الدخول</a>

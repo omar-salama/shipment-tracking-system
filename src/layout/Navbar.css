@@ -1,0 +1,37 @@
+.navbar {
+  padding: 15px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+.navbar .navbar-brand img {
+  width: 115px;
+  height: 35px;
+  margin-left: 40px;
+}
+.navbar .navbar-nav {
+  margin-right: 25px;
+}
+.navbar .navbar-nav .nav-link {
+  padding: 0 25px;
+  color: #323232;
+  font-weight: 700;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #fb0006;
+  cursor: pointer;
+}
+.navbar .dropdown-menu {
+  border: none;
+  background-color: inherit;
+}
+.navbar .dropdown-menu .ShipmentInqueryForm {
+  background-color: #fafafa;
+}
+
+@media screen and (max-width: 768px) {
+  .left-nav {
+    margin-right: 25px !important;
+  }
+  .navbar-nav .nav-link {
+    margin-top: 10px;
+  }
+}
