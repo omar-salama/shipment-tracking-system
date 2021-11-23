@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/track-shipment" element={<ShipmentInquery />} />
+            <Route path="/" element={<ShipmentInquery />} />
             <Route
               path="/track-shipment/:shipmentNumber"
               element={<ShipmentTracking />}
